@@ -1,6 +1,6 @@
 import 'package:test/test.dart';
 
-import 'package:ethiopian_calendar/ethiopian_calendar.dart';
+import 'package:ethiopian_calendar_plus/ethiopian_calendar.dart';
 import 'package:intl/intl.dart';
 
 void main() {
