@@ -13,14 +13,6 @@ and the Flutter guide for
 
 # Ethiopian Calendar
 
-[![Pub Version](https://img.shields.io/pub/v/ethiopian_calendar)](https://pub.dev/packages/ethiopian_calendar)
-[![Build Status](https://github.com/yourusername/ethiopian_calendar/workflows/CI/badge.svg)](https://github.com/yourusername/ethiopian_calendar/actions)
-[![Coverage Status](https://coveralls.io/repos/github/yourusername/ethiopian_calendar/badge.svg?branch=main)](https://coveralls.io/github/yourusername/ethiopian_calendar?branch=main)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Pub Points](https://img.shields.io/pub/points/ethiopian_calendar)](https://pub.dev/packages/ethiopian_calendar/score)
-[![Pub Popularity](https://img.shields.io/pub/popularity/ethiopian_calendar)](https://pub.dev/packages/ethiopian_calendar/score)
-[![Pub Likes](https://img.shields.io/pub/likes/ethiopian_calendar)](https://pub.dev/packages/ethiopian_calendar/score)
-
 A Dart package for working with the Ethiopian Calendar (also known as Ge'ez Calendar), providing easy conversion between Ethiopian and Gregorian dates along with localized formatting options.
 
 ## Features
@@ -127,6 +119,19 @@ Contributions are welcome! If you find a bug or want to add a feature:
 3. Ensure all tests pass
 4. Update documentation as needed
 
+### Author
+
+**Alex Weldu**
+
+- GitHub: [@alexweldu123](https://github.com/alexweldu123)
+- Email: <alexweldu123@gmail.com>
+
+### Support
+
+If you find this package helpful, please consider giving it a star ⭐ on GitHub and a like 👍 on pub.dev.
+
+For bugs or feature requests, please create an issue on the [GitHub repository](https://github.com/alexweldu/ethiopian_calendar/issues).
+
 ### License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
