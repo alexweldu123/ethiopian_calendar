@@ -88,23 +88,6 @@ class EthiopianDateConverter {
     );
   }
 
-  static int _gregorianToJDN(int year, int month, int day) {
-    if (month <= 2) {
-      year -= 1;
-      month += 12;
-    }
-
-    int a = year ~/ 100;
-    int b = 2 - a + (a ~/ 4);
-
-    return ((365.25 * (year + 4716)).floor() +
-            (30.6001 * (month + 1)).floor() +
-            day +
-            b -
-            1524.5)
-        .floor();
-  }
-
   static int _ethiopianToJDN(int year, int month, int day) {
     return 1723856 + 365 * (year - 1) + (year ~/ 4) + 30 * (month - 1) + day;
   }
@@ -127,6 +110,24 @@ class EthiopianDateConverter {
     int year = 100 * (n - 49) + i + l;
 
     return DateTime(year, month, day);
+  }
+
+  // ignore: unused_element
+  static int _gregorianToJDN(int year, int month, int day) {
+    if (month <= 2) {
+      year -= 1;
+      month += 12;
+    }
+
+    int a = year ~/ 100;
+    int b = 2 - a + (a ~/ 4);
+
+    return ((365.25 * (year + 4716)).floor() +
+            (30.6001 * (month + 1)).floor() +
+            day +
+            b -
+            1524.5)
+        .floor();
   }
 }
 
