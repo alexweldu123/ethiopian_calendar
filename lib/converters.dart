@@ -3,11 +3,24 @@ import 'package:intl/intl.dart';
 import 'ethiopian_date.dart';
 import 'localization.dart';
 
+/// A class that provides methods for converting between Gregorian and Ethiopian dates.
 class EthiopianDateConverter {
+  /// Determines if a given Gregorian year is a leap year.
+  ///
+  /// A year is a leap year if it is divisible by 4,
+  /// except for end-of-century years, which must be divisible by 400.
   static bool _isGregorianLeapYear(int year) {
     return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
   }
 
+  /// Converts a Gregorian [DateTime] to an EthiopianDate.
+  ///
+  /// The conversion takes into account the differences between the two calendars,
+  /// including the Ethiopian New Year and the number of days in each month.
+  ///
+  /// [date] - The Gregorian date to convert.
+  ///
+  /// Returns an instance of [EthiopianDate] representing the equivalent Ethiopian date.
   static EthiopianDate gregorianToEthiopian(DateTime date) {
     // Constants for Ethiopian calendar
     const int monthDays = 30;
@@ -88,15 +101,34 @@ class EthiopianDateConverter {
     );
   }
 
+  /// Converts an Ethiopian date to a Julian Day Number (JDN).
+  ///
+  /// [year] - The Ethiopian year.
+  /// [month] - The Ethiopian month.
+  /// [day] - The Ethiopian day.
+  ///
+  /// Returns the Julian Day Number corresponding to the Ethiopian date.
   static int _ethiopianToJDN(int year, int month, int day) {
     return 1723856 + 365 * (year - 1) + (year ~/ 4) + 30 * (month - 1) + day;
   }
 
+  /// Converts an Ethiopian date to a Gregorian [DateTime].
+  ///
+  /// [year] - The Ethiopian year.
+  /// [month] - The Ethiopian month.
+  /// [day] - The Ethiopian day.
+  ///
+  /// Returns a [DateTime] object representing the equivalent Gregorian date.
   static DateTime ethiopianToGregorian(int year, int month, int day) {
     int jdn = _ethiopianToJDN(year, month, day);
     return _jdnToGregorian(jdn);
   }
 
+  /// Converts a Julian Day Number (JDN) to a Gregorian [DateTime].
+  ///
+  /// [jdn] - The Julian Day Number to convert.
+  ///
+  /// Returns a [DateTime] object representing the corresponding Gregorian date.
   static DateTime _jdnToGregorian(int jdn) {
     int l = jdn + 68569;
     int n = (4 * l) ~/ 146097;
@@ -113,6 +145,13 @@ class EthiopianDateConverter {
   }
 
   // ignore: unused_element
+  /// Converts a Gregorian date to a Julian Day Number (JDN).
+  ///
+  /// [year] - The Gregorian year.
+  /// [month] - The Gregorian month.
+  /// [day] - The Gregorian day.
+  ///
+  /// Returns the Julian Day Number corresponding to the Gregorian date.
   static int _gregorianToJDN(int year, int month, int day) {
     if (month <= 2) {
       year -= 1;
@@ -131,21 +170,42 @@ class EthiopianDateConverter {
   }
 }
 
+/// Extension methods for formatting Ethiopian dates.
 extension EthiopianDateFormat on DateFormat {
+  /// Formats a Gregorian [DateTime] to a string in Ethiopian date format.
+  ///
+  /// [date] - The Gregorian date to format.
+  ///
+  /// Returns a string representing the Ethiopian date in the format "day month year".
   String formatEthiopian(DateTime date) {
     final ethiopianDate = EthiopianDateConverter.gregorianToEthiopian(date);
     return '${ethiopianDate.day} ${EthiopianLocalization.amharicMonths[ethiopianDate.month - 1]} ${ethiopianDate.year}';
   }
 
+  /// Formats a Gregorian [DateTime] to a short Ethiopian date format.
+  ///
+  /// [date] - The Gregorian date to format.
+  ///
+  /// Returns a string representing the Ethiopian date in the format "day/month/year".
   String formatEthiopianShort(DateTime date) {
     final ethiopianDate = EthiopianDateConverter.gregorianToEthiopian(date);
     return '${ethiopianDate.day}/${ethiopianDate.month}/${ethiopianDate.year}';
   }
 
+  /// Gets the Ethiopian weekday name for a given Gregorian [DateTime].
+  ///
+  /// [date] - The Gregorian date to get the weekday for.
+  ///
+  /// Returns the Amharic name of the weekday.
   String getEthiopianWeekday(DateTime date) {
     return EthiopianLocalization.amharicDays[date.weekday % 7];
   }
 
+  /// Formats a Gregorian [DateTime] to a full Ethiopian date format including the weekday.
+  ///
+  /// [date] - The Gregorian date to format.
+  ///
+  /// Returns a string representing the full Ethiopian date in the format "weekday, day month year".
   String formatEthiopianFull(DateTime date) {
     final ethiopianDate = EthiopianDateConverter.gregorianToEthiopian(date);
     return '${getEthiopianWeekday(date)}, ${ethiopianDate.day} ${EthiopianLocalization.amharicMonths[ethiopianDate.month - 1]} ${ethiopianDate.year}';
