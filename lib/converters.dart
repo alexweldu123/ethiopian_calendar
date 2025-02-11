@@ -152,22 +152,6 @@ class EthiopianDateConverter {
   /// [day] - The Gregorian day.
   ///
   /// Returns the Julian Day Number corresponding to the Gregorian date.
-  static int _gregorianToJDN(int year, int month, int day) {
-    if (month <= 2) {
-      year -= 1;
-      month += 12;
-    }
-
-    int a = year ~/ 100;
-    int b = 2 - a + (a ~/ 4);
-
-    return ((365.25 * (year + 4716)).floor() +
-            (30.6001 * (month + 1)).floor() +
-            day +
-            b -
-            1524.5)
-        .floor();
-  }
 }
 
 /// Extension methods for formatting Ethiopian dates.
