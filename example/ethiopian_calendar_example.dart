@@ -1,4 +1,4 @@
-import 'package:ethiopian_calendar_plus/ethiopian_calendar.dart';
+import 'package:ethiopian_calendar_plus/converters.dart';
 import 'package:intl/intl.dart';
 
 void main() {

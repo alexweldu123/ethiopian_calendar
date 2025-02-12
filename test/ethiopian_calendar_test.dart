@@ -1,16 +1,11 @@
+import 'package:ethiopian_calendar_plus/converters.dart';
+import 'package:ethiopian_calendar_plus/ethiopian_date.dart';
+import 'package:ethiopian_calendar_plus/localization.dart';
 import 'package:test/test.dart';
 
-import 'package:ethiopian_calendar_plus/ethiopian_calendar.dart';
 import 'package:intl/intl.dart';
 
 void main() {
-  test('adds one to input values', () {
-    final calculator = Calculator();
-    expect(calculator.addOne(2), 3);
-    expect(calculator.addOne(-7), -6);
-    expect(calculator.addOne(0), 1);
-  });
-
   group('EthiopianDate Tests', () {
     test('toString formats date correctly', () {
       final date = EthiopianDate(year: 2016, month: 7, day: 13);
