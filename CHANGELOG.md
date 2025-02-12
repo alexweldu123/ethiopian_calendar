@@ -1,3 +1,20 @@
+## 1.0.6
+
+* Added Layout guidlines how to add example
+
+## 1.0.5
+
+* Added comprehensive documentation to all public APIs
+* Renamed package to ethiopian_calendar_plus
+* Fixed JDN conversion issues
+* Added library-level documentation
+* Improved test coverage
+* Updated package description and metadata
+
+## 1.0.4
+
+* Previous version
+
 ## 1.0.0
 
 Initial release of the Ethiopian Calendar package with the following features:
