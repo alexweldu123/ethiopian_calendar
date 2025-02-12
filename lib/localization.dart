@@ -1,3 +1,11 @@
+/// Provides localization support for Ethiopian calendar with Amharic text.
+///
+/// Includes:
+/// * Amharic month names
+/// * Amharic weekday names
+/// * Text formatting utilities
+library localization;
+
 /// A class that provides localization support for the Ethiopian calendar,
 /// including the names of months and days in Amharic.
 class EthiopianLocalization {

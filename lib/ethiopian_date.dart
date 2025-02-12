@@ -1,3 +1,11 @@
+/// Defines the Ethiopian date model and related utilities.
+///
+/// The Ethiopian calendar:
+/// * Has 13 months
+/// * Is 7-8 years behind the Gregorian calendar
+/// * Has 30 days in each month (except the 13th month)
+library ethiopian_date;
+
 /// A class representing a date in the Ethiopian calendar.
 ///
 /// This class holds the year, month, and day of an Ethiopian date

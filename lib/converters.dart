@@ -1,3 +1,12 @@
+/// Provides conversion utilities between Ethiopian and Gregorian calendar systems.
+///
+/// Features:
+/// * Convert Gregorian dates to Ethiopian dates
+/// * Convert Ethiopian dates to Gregorian dates
+/// * Julian Day Number (JDN) calculations
+/// * Date formatting utilities
+library converters;
+
 import 'package:intl/intl.dart';
 
 import 'ethiopian_date.dart';
