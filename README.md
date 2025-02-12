@@ -32,7 +32,7 @@ Add this package to your project's `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  ethiopian_calendar: ^1.0.0
+  ethiopian_calendar_plus: ^1.0.0
   intl: ^any  # Required dependency
 ```
 
