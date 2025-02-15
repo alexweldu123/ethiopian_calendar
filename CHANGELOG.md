@@ -1,3 +1,7 @@
+## 1.0.7
+
+* Fixed meta package dependency constraint to be compatible with Flutter SDK
+
 ## 1.0.6
 
 * Added Layout guidlines how to add example

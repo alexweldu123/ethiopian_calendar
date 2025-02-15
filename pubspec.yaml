@@ -1,6 +1,6 @@
 name: ethiopian_calendar_plus
 description: A comprehensive Dart package for Ethiopian Calendar conversion and formatting with Amharic language support.
-version: 1.0.6
+version: 1.0.7
 homepage: https://github.com/alexweldu123/ethiopian_calendar
 repository: https://github.com/alexweldu123/ethiopian_calendar
 
@@ -9,7 +9,7 @@ environment:
 
 dependencies:
   intl: ^0.20.2
-  meta: ^1.16.0
+  meta: '>=1.15.0 <1.17.0'
 
 dev_dependencies:
   test: ^1.24.0
